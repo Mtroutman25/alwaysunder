@@ -1,0 +1,11 @@
+nav.navbar.navbar-default {
+  margin-bottom: 40px;
+    background: white;
+
+}
+
+a.navbar-brand {
+	color: black;
+	font-weight: bolder;
+
+}

@@ -1,0 +1,43 @@
+{
+  "name": "alwaysunder",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "server": "node server.js",
+    "client": "node scripts/start-client.js",
+    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
+    "build": "node scripts/build.js",
+    "seed": "node scripts/seedDB.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Mtroutman25/alwaysunder.git"
+  },
+  "author": "Mike Troutman <mktrout09@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "^2.0.0-beta.3",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.7",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.4.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.1.2",
+    "reactstrap": "^5.0.0-alpha.4"
+  },
+  "description": "",
+  "bugs": {
+    "url": "https://github.com/Mtroutman25/alwaysunder/issues"
+  },
+  "homepage": "https://github.com/Mtroutman25/alwaysunder#readme"
+}

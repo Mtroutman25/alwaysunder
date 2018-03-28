@@ -18,7 +18,7 @@ app.use(session({ secret: 'anything' }));
 app.use(passport.initialize());
 app.use(passport.session());
 // Serve up static assets
-app.use(express.static('client/build'));
+app.use(express.static('audi/build'));
 // Add routes, both API and view
 app.use(routes);
 
@@ -30,7 +30,7 @@ passport.deserializeUser(User.deserializeUser());
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/basketreact', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/audiusers', {
   useMongoClient: true
 });
 

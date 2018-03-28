@@ -1,21 +1,90 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from './pages/Register';
+import Navbar from "./components/Navbar";
+import Wrapper from "./components/Wrapper";
+import API from './utils/API';
+import "antd/dist/antd.css"
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+  state = {
+    isLoggedIn: false,
+    successfulLogout: false,
+    username: '',
+
+  };
+
+    componentDidMount() {
+    API.loginCheck()
+      .then(res => {
+        console.log(res)
+        if (res.data.username) {
+          this.setState({
+            isLoggedIn: true,
+            username: res.data.username
+            
+          })
+          console.log(res.data)
+        } else {
+          this.setState({
+            isLoggedIn: false
+          })
+        }
+      })
+      .catch(err => console.log(err))
+
+    
+  };
+
+
+  userLogout = () => {
+    console.log('logout')
+    API.logout()
+      .then(res => {
+        if (res.data === false) {
+          this.setState({
+            successfulLogout: true,
+            isLoggedIn: false,
+            username: ''
+          });
+          console.log(res.data)
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
+
+  updateUserName = (username) => {
+    this.setState({
+      username: username,
+      isLoggedIn: true
+    })
+  }
+
+ render() {
+  console.log('hi')
+  return (
+
+     <Router>
+     <div>
+      <Navbar username={this.state.username} isLoggedIn={this.state.isLoggedIn} logout={this.userLogout} />
+
+      <Wrapper>
+        <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/login" render={() => <Login updateUserName={this.updateUserName}/>} />
+        <Route exact path="/register" component={Register} />
+        </Switch>
+      </Wrapper>
+
+      </div>
+  </Router>
+
+  )
+ }
 }
 
 export default App;
