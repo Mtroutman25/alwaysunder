@@ -1,5 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display');
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+
+.text-center,
+a.navbar-brand,
+a,
+h3,
+p,
+footer{
+
+font-family: 'Fjalla One', sans-serif;
+
+
+}
+
+a {
+	color: gold;
+}
+
+
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+		background-color: #f2f2f2;
+}
+
+h5 {
+	 color: white;
 }

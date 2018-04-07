@@ -12,7 +12,7 @@ const Navbar = props => {
         <div className="navbar-header">
 
           <Link className="navbar-brand" to="/">
-            Basket Builder
+            Always Under
           </Link>
           <h5>Welcome {props.username ? props.username : ''}</h5>
 
@@ -74,3 +74,8 @@ const Navbar = props => {
   )
   
 }
+  
+
+export default Navbar;
+
+

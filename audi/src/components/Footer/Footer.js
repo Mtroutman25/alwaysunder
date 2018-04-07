@@ -3,7 +3,7 @@ import "./Footer.css";
 
 const Footer = () =>
   <footer className="footer">
-    <span>Basket Builder @2018 Always Under</span>
+    <span>Always Under @2018 Mike Troutman</span>
   </footer>;
 
 export default Footer;

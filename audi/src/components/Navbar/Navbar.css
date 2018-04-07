@@ -1,11 +1,15 @@
 nav.navbar.navbar-default {
   margin-bottom: 40px;
-    background: white;
+    background: black;
 
 }
 
 a.navbar-brand {
-	color: black;
+	color: gold;
 	font-weight: bolder;
 
+}
+
+h5 {
+	color: gold;
 }
