@@ -15,7 +15,7 @@
     "url": "git+ssh://git@github.com/Mtroutman25/alwaysunder.git"
   },
   "author": "Mike Troutman <mktrout09@gmail.com>",
-  "license": "MIT",
+  "license": "ISC",
   "devDependencies": {
     "concurrently": "^3.5.0",
     "nodemon": "^1.11.0"

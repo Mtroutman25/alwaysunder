@@ -78,11 +78,11 @@ class App extends Component {
       <Wrapper>
         <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/build" render={() => <Build isLoggedIn={this.state.isLoggedIn}/>} />
-        <Route exact path="/login" render={() => <Login updateUserName={this.updateUserName}/>} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/checkout" render={() => <Checkout isLoggedIn={this.state.isLoggedIn}/>} />
+        <Route exact path="/About" component={About} />
+        <Route exact path="/Build" render={() => <Build isLoggedIn={this.state.isLoggedIn}/>} />
+        <Route exact path="/Login" render={() => <Login updateUserName={this.updateUserName}/>} />
+        <Route exact path="/Register" component={Register} />
+        <Route exact path="/Checkout" render={() => <Checkout isLoggedIn={this.state.isLoggedIn}/>} />
         </Switch>
       </Wrapper>
 
